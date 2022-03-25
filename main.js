@@ -12,10 +12,10 @@ block_image_height = 5;
 
 function load_img(){
 	// write code to Upload golf image on the canvas
-	fabric.Image.fromURL("golf-h1.png" , function(Img) {
+	fabric.Image.fromURL("golf-h.png" , function(Img) {
 		hole_obj = Img;
 		hole_obj.scaleToWidth(50);
-		hole_Obj.scaleToHeight(50);
+		hole_obj.scaleToHeight(50);
 		hole_obj.set({
 			top:hole_y,
 			left:hole_x
@@ -28,7 +28,7 @@ canvas.add(hole_obj);
 function new_image()
 {
 	// write code to Upload ball image on canvas
-	fabric.Image.fromURL("ball.png" , function(img) {
+	fabric.Image.fromURL("ball.png" , function(Img) {
 		ball_obj = Img;
 		ball_obj.scaleToWidth(50);
 		ball_obj.scaleToHeight(50);
@@ -118,7 +118,7 @@ function my_keydown(e)
              ball_x = ball_x - block_image_width;
              console.log("block image width = " + block_image_width);
              console.log("When left arrow key is pressed, X = " + ball_x +", Y = " + ball_y);
-             canvas.remove(ball_object);
+             canvas.remove(ball_obj);
              new_image();
          }
 		}
@@ -129,6 +129,11 @@ function my_keydown(e)
 		if(ball_x <=1050)
 		{
 			// Write a code to move ball right side.
+			ball_x = ball_x + block_image_width;
+             console.log("block image width = " + block_image_width);
+             console.log("When right arrow key is pressed, X = " + ball_x +", Y = " + ball_y);
+             canvas.remove(ball_obj);
+             new_image();
 		}
 	}
 	
